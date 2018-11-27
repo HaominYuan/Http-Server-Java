@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.Socket;
 
 public class Dispatcher implements Runnable {
@@ -29,6 +30,10 @@ public class Dispatcher implements Runnable {
             response.pushToClient(code);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("fuck");
+        } catch (InstantiationException | InvocationTargetException | NoSuchMethodException | ClassNotFoundException | IllegalAccessException e) {
+            e.printStackTrace();
+            System.out.println("构造出了问题");
         }
         CloseUtil.close(client);
     }

@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServletContext {
-    private Map<String, Servlet> servlet;
+    private Map<String, String> servlet;
     private Map<String, String> mapping;
 
     ServletContext() {
@@ -10,7 +10,7 @@ public class ServletContext {
         mapping = new HashMap<>();
     }
 
-    Map<String, Servlet> getServlet() {
+    Map<String, String> getServlet() {
         return servlet;
     }
 
@@ -19,7 +19,7 @@ public class ServletContext {
     }
 
 
-    public void setServlet(Map<String, Servlet> servlet) {
+    public void setServlet(Map<String, String> servlet) {
         this.servlet = servlet;
     }
 
